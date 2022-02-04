@@ -1,11 +1,11 @@
-package com.example.composedemo
+package com.example.composedemo.model
 
-import com.example.composedemo.model.Character
+import com.example.composedemo.R
 
-val characterList = listOf<Character>(
-    Character(R.drawable.sponge_bob, "Sponge Bob"),
-    Character(R.drawable.timmy_turner, "Timmy Turner"),
-    Character(R.drawable.phineas_flynn, "Phineas Flynn"),
-    Character(R.drawable.kenny_mccormick, "Kenny McCormick"),
-    Character(R.drawable.tasmanian_devil, "Tasmanian Devil"),
+val characterList = listOf<MyCharacter>(
+    MyCharacter(R.drawable.sponge_bob, "Sponge Bob"),
+    MyCharacter(R.drawable.timmy_turner, "Timmy Turner"),
+    MyCharacter(R.drawable.phineas_flynn, "Phineas Flynn"),
+    MyCharacter(R.drawable.kenny_mccormick, "Kenny McCormick"),
+    MyCharacter(R.drawable.tasmanian_devil, "Tasmanian Devil"),
 )

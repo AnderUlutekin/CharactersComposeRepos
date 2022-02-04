@@ -3,26 +3,20 @@ package com.example.composedemo
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.material.*
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.composedemo.CharacterListUi.CharacterList
+import com.example.composedemo.ui.character.CharacterScreen
 import com.example.composedemo.ui.theme.ComposeDemoTheme
+import com.example.composedemo.viewModel.CharacterScreenViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val characterScreenViewModel = CharacterScreenViewModel()
+
         setContent {
             ComposeDemoTheme {
-                Scaffold(
-                    topBar = { TopAppBar(
-                        title = { Text(text = "Characters",) },
-                        backgroundColor = Color(0xFFA5A2A2),
-                        contentColor = Color(0xFF000000)
-                    ) },
-                    content = { CharacterList(myList = characterList) },
-                )
+                CharacterScreen(characterScreenViewModel)
             }
         }
     }
@@ -31,7 +25,8 @@ class MainActivity : ComponentActivity() {
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
+    val characterScreenViewModel = CharacterScreenViewModel()
     ComposeDemoTheme {
-        CharacterList(myList = characterList)
+        CharacterScreen(characterScreenViewModel)
     }
 }
